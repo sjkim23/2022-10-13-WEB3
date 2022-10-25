@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+        딸기 갯수를 입력받는다.
+        한개당 75개의 딸기큐브가 나온다.
+        몇개의 딸기 큐브가 나왔는지 알림창으로 출력해주세요!
+    -->
+
+    <button onclick="딸기분쇄기()">딸기분쇄!</button>
+    <script>
+        
+        function 딸기분쇄기() {
+            const 딸기 = parseInt(prompt(`딸기는 총몇개인가요?`));
+            const 딸기큐브 = 딸기*75;
+            
+            alert(`딸기큐브의 수는 총${딸기큐브}입니다`)
+        }
+        
+
+
+        /*강사님 답안
+        function 딸기분쇄기() {
+            const 딸기 = parseInt(prompt(`딸기는 총몇개인가요?`));
+            const 분쇄도 = 75;
+            
+            alert(`딸기큐브의 수는 총${딸기*분쇄도}*입니다`)
+        }
+        */
+       
+    </script>
+</body>
+</html>

@@ -4,37 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Document</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        .container {
-            border: 1px solid black;
-            margin: 4px;
+        h1{
+            color: blue;
         }
+
+        div{
+            float: left;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid black;
+        }
+
     </style>
 </head>
 <body>
     <h1>구구단이다!</h1>
-    <div class="container">
-        <h2>단</h2>
-        <p class="table"></p>
-    </div>
 
     <script>
         var body = document.querySelector('body');
-        var 콘텐츠 = ``
+        var content = ``;
 
-        for(var j=1; j <= 9; j++){
-            콘텐츠 += `<div>`;
-            for(var i =1; i <=9; i++){
-                body.innerHTML += `<p class="table">${j}x${i}=${j*i}</p>`
+        for(var i=1;i<=9;i++){
+            content += `<div>`;
+            content += `<h2>${i}단</h2>`;
+            for(var j=1;j<=9;j++){
+                content += `<p>${i} x ${j} =${i*j}</p>`;
             }
-            콘텐츠 += `</div>`;
+            content += "</div>";
         }
-        body.innerHTML = 콘텐츠;
+
+        body.innerHTML += content;
     </script>
 </body>
 </html>
