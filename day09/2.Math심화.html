@@ -7,13 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <button id="up down game start">게임시작</button>
+    <button id="up-down-game-button">업다운 게임 시작!</button>
     <script>
         // const now = new Date(); 일반적인 객체 사용
         
         // Math는 수학과 관련된 상수나 기능들이 들어있는 객체
         // 다른 객체처럼 생성을 따로 하진 않는다. 그냥 사용가능!
-        alert(Math.floor(Math.random()*45+1));
+        
+        // alert(Math.floor(Math.random()*45+1));
 
 
         /*
@@ -31,66 +32,47 @@
         }
         마지막 else에는 괄호 들어가지 않습니다.
         */
-       
 
-        let answer = Math.floor(Math.random() * 99 + 1)
-        console.log(answer);
-
-        document.getElementById().addEventListener('click', 게임시작)
-
-        for (let i = 0 ; i < 5 ; i ++)
-        {
-           
-            let input = parseInt(prompt("숫자를 넣으세요"))
-            
-            if (input > answer) 
-            {
-                alert("down")
-            }
-            else if(input < answer) 
-            {
-                alert("up")
-            }
-            else if(input === answer)
-            {
-                alert("정답!")
-            }
-        }
-
-
-
-        //선생님 답안
-
+        
         const upDownGameButton = document.getElementById('up-down-game-button');
-        upDownGameButton.addEventListener('click', upDownGameStart);
+        upDownGameButton.addEventListener('click',upDownGameStart);
+
 
         function upDownGameStart(){
             const answer = Math.floor(Math.random()*100+1);
-            alret(answer);
+            alert(answer);
 
-            for(let i =0; i <5; i ++){
-                const input = Number(prompt(`1부터 100까지 숫자 중 하나를 입력해주세요`));
-            
+            for(let i = 0 ; i < 5 ; i ++){
+                const input = Number(prompt(`1부터 100까지 숫자중 하나를 입력해주세요\n남은 기회는 ${5-i}번입니다.`));
+
+                if(!Number.isInteger(input)){
+                    alert('실수를 입력하셨습니다.\n정수만 입력 가능합니다.')
+                    i--;
+                    continue;
+                }
+                if(Number.isNaN(input)){
+                    alert('잘못된 값을 입력하셨습니다. \n숫자만 입력해주세요.');
+                    i--;
+                    continue;
+                }
 
                 if(answer < input) {
-                    alret(`정답은 ${input}보다 작습니다`)
+                    alert(`정답은 ${input}보다 작습니다`)
                 }else if (answer > input) {
-                    alret(`정답은 ${input}보다 큽니다`)
+                    alert(`정답은 ${input}보다 큽니다`)
                 }else {
-                    alret(`정답입니다!`)
+                    alert(`정답입니다!`)
                     break;
                 }
 
-                if(i===4){
-                    alret(`정답은 ${answer}였습니다.`)
+                if(i===4) {
+                    alert(`정답은 ${answer}였습니다.`)
                 }
             }
-
-
         }
-        
+            
 
-        
+
 
     </script>
 </body>
